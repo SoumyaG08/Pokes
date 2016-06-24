@@ -1,3 +1,28 @@
 * {
   font-family: monaco;
 }
+.container{
+	margin: 0 auto;
+	background-color: #2F4F4F;
+	color: silver;
+	width: 980px;
+	height: 1000px;
+	text-align: center;
+}
+.pokes{
+	border: 1px solid #FFF;
+	width: 500px;
+	margin-left: 230px;
+}
+.table{
+	border: 1px solid #FFF;
+	width: 700px;
+	margin-left: 180px;
+}
+.navbar a{
+	color: #FFF;
+	position: relative;
+	left: 300px;
+	bottom: 100px;
+
+}
