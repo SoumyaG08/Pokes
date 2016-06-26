@@ -64,6 +64,7 @@ class Users(Controller):
             return redirect('/pokes')
         else:
             for message in log_valid['errors']:
+                print "Flashing a message"
                 flash(message)
             return redirect('/')
 

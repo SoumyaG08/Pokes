@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `pokedb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `pokedb`;
 -- MySQL dump 10.13  Distrib 5.7.9, for osx10.9 (x86_64)
 --
 -- Host: localhost    Database: pokedb
@@ -30,8 +32,8 @@ CREATE TABLE `pokes` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_pokes_users_idx` (`user_id`),
-  CONSTRAINT `fk_pokes_users` FOREIGN KEY (`user_id`) REFERENCES `mydb`.`users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_pokes_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +42,7 @@ CREATE TABLE `pokes` (
 
 LOCK TABLES `pokes` WRITE;
 /*!40000 ALTER TABLE `pokes` DISABLE KEYS */;
-INSERT INTO `pokes` VALUES (1,2,1,'2016-06-24 10:37:26',1),(2,3,1,'2016-06-24 10:37:37',1),(3,6,1,'2016-06-24 10:37:44',1),(4,6,1,'2016-06-24 10:37:51',2),(5,7,1,'2016-06-24 10:38:07',3),(6,2,1,'2016-06-24 12:18:05',1),(7,2,1,'2016-06-24 12:18:06',1),(8,3,1,'2016-06-24 12:18:07',1),(9,3,1,'2016-06-24 12:18:08',1),(10,3,1,'2016-06-24 12:18:08',1),(11,2,1,'2016-06-24 12:18:09',1),(12,2,1,'2016-06-24 12:18:10',1),(13,2,1,'2016-06-24 12:18:10',1),(14,3,1,'2016-06-24 12:18:11',1),(15,3,1,'2016-06-24 12:18:11',1),(16,3,1,'2016-06-24 12:18:12',1),(17,2,1,'2016-06-24 12:18:13',1),(18,2,1,'2016-06-24 12:18:13',1),(19,1,1,'2016-06-24 12:22:42',2),(20,1,1,'2016-06-24 12:22:47',2),(21,1,1,'2016-06-24 12:22:47',2),(22,1,1,'2016-06-24 12:22:48',2),(23,1,1,'2016-06-24 12:22:49',2),(24,1,1,'2016-06-24 12:22:51',2),(25,1,1,'2016-06-24 12:22:52',2),(26,1,1,'2016-06-24 12:22:56',3),(27,1,1,'2016-06-24 12:22:58',3),(28,1,1,'2016-06-24 12:23:05',2),(29,1,1,'2016-06-24 12:24:51',3),(30,1,1,'2016-06-24 12:24:52',3),(31,1,1,'2016-06-24 12:24:59',3),(32,1,1,'2016-06-24 12:28:41',3),(33,1,1,'2016-06-24 12:28:42',3),(34,1,1,'2016-06-24 12:31:59',2),(35,1,1,'2016-06-24 12:32:00',2),(36,1,1,'2016-06-24 12:32:01',3),(37,1,1,'2016-06-24 12:32:01',3),(38,1,1,'2016-06-24 12:32:01',3),(39,1,1,'2016-06-24 12:32:02',3),(40,1,1,'2016-06-24 12:32:04',3),(41,1,1,'2016-06-24 12:32:05',2),(42,1,1,'2016-06-24 12:32:06',2),(43,1,1,'2016-06-24 12:32:07',3),(44,1,1,'2016-06-24 12:32:08',2),(45,1,1,'2016-06-24 12:32:09',2),(47,1,1,'2016-06-24 12:42:26',2),(48,1,1,'2016-06-24 12:42:28',3),(51,1,1,'2016-06-24 12:46:44',2),(52,1,1,'2016-06-24 12:46:45',3),(55,5,1,'2016-06-24 12:49:44',1);
+INSERT INTO `pokes` VALUES (1,3,1,'2016-06-26 15:46:15',1),(2,2,1,'2016-06-26 15:46:32',1),(3,1,1,'2016-06-26 15:49:32',2),(4,1,1,'2016-06-26 15:49:33',3),(5,1,1,'2016-06-26 15:49:34',4),(6,1,1,'2016-06-26 15:49:35',5),(7,1,1,'2016-06-26 15:49:36',4),(8,1,1,'2016-06-26 15:49:37',3),(9,1,1,'2016-06-26 15:49:41',2),(10,1,1,'2016-06-26 15:49:42',3),(11,1,1,'2016-06-26 15:49:43',4),(12,1,1,'2016-06-26 15:49:43',5),(13,1,1,'2016-06-26 15:49:44',5),(14,1,1,'2016-06-26 15:50:19',4),(15,1,1,'2016-06-26 15:50:20',5),(16,1,1,'2016-06-26 15:50:21',3),(17,1,1,'2016-06-26 15:50:22',2),(18,1,1,'2016-06-26 15:50:23',3),(19,1,1,'2016-06-26 15:50:25',4),(20,2,1,'2016-06-26 15:50:54',1),(21,2,1,'2016-06-26 15:50:57',5),(22,2,1,'2016-06-26 15:50:58',5),(23,2,1,'2016-06-26 15:51:01',5);
 /*!40000 ALTER TABLE `pokes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +61,7 @@ CREATE TABLE `users` (
   `pw_hash` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +70,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Soumya Gatti','Sam','soumyanatural@gmail.com','$2b$12$60FBTFlBnTbjrlw9Py2pvu0zX3UPvd7VIQLk7G8vqsoLI4CmAA2pm','2016-06-24 10:12:30'),(2,'Andrew Johnson','Andy','ajohnson@gmail.com','$2b$12$jcu9N.jp3QgMmdm9mJrFweMtlD5qUwau9FNdf/.meNVaplbHUZ6g6','2016-06-24 10:13:45'),(3,'Harry Potter','Harry','hpotter@hogwarts.edu','$2b$12$oHv4ijbrnvXHEImTG0ulTOoGh0XepHqDhIHHz4in1Kltkgma38/De','2016-06-24 10:14:29'),(4,'Jon Snow','Jon','jsnow@winterfell.com','$2b$12$o1m.bLxzlJVGmTU6SsnXeeU31qyzRbeQVprJZ2gajEE0zyhd97oUK','2016-06-24 10:33:21'),(5,'Danaerys T','Danny','danny@mereen.com','$2b$12$C4y57bLYaRjVqAioqHPTX.QRYNuSae2hzB.CkdQcP.aRQwQz91xDG','2016-06-24 10:33:44'),(6,'Alan Johnson','Alan','alanj@yahoo.com','$2b$12$c5SU42c94H9V2pyP1WaFZu1HlozanX.obU2k2BsrnzT6RtkydpGjO','2016-06-24 10:34:08'),(7,'Riya Khan','Ri','rkhan@gmail.com','$2b$12$4k47CqteO9Dbo7kdnjBZWeq3/8LcVQo8M3gsZG5q.tYPdwOvxqf3O','2016-06-24 10:34:33'),(8,'Lady Crane','Lady','lcrane@guild.com','$2b$12$K2naZbtxEjL1XbyYWcQaS.mrxfrf6aD1/g/85qB8GCIJsOnAlMvQS','2016-06-24 10:35:09'),(9,'Ned Stark','Neddy','nstark@winterfell.com','$2b$12$Szlcpbs.mFY7rB48K76HkeuArpSCcDz5ZLdCo77o.pM6xVfKYooyW','2016-06-24 10:35:37'),(10,'aya kanda','Aya','akanda@gmail.com','$2b$12$3k2SmF3QJAa.dgxAdxtupORZJ9ttQof1UT5qDry2fiZEgudZSBu8S','2016-06-24 10:36:35');
+INSERT INTO `users` VALUES (1,'Soumya','Sam','soumyanatural@gmail.com','$2b$12$oAya6IlxHnpQtws4tEcPkOjyVthkUby1cgaXHWzHAYnS0Tt2Rt1p6','2016-06-26 15:33:45'),(2,'Jon Snow','Jon','jsnow@winterfell.com','$2b$12$2uZT8X48yQ3RSFG5t1OC1Oz7u869YzQBQnZV3XCB5b.OliuJLuYE2','2016-06-26 15:34:27'),(3,'aya kanda','Aya','akanda@gmail.com','$2b$12$DYwMMGSD7UyOCV6gwDp93u5kzoYsdUBGVsgxtqLKH0eOl6QVfkGty','2016-06-26 15:34:47'),(4,'Harry Potter','Harry','hpotter@hogwarts.edu','$2b$12$m3oi3bRJLyNqhEPvWFsOOuKSZjdzSW268yAA7RyX1AK9Mhjw0Tmru','2016-06-26 15:35:03'),(5,'Ned Stark','Neddy','nstark@winterfell.com','$2b$12$4iT0bVUPuMgQvK.I8LNHWOhWVqHBl04ToHFQbN5tVVY/nRDHjC0Wy','2016-06-26 15:35:27');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +83,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-24 12:54:04
+-- Dump completed on 2016-06-26 16:07:30

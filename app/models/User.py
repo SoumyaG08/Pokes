@@ -51,12 +51,15 @@ class User(Model):
         user_data = {'email': info['email']}
         user = self.db.query_db(user_query, user_data)
         if user:
+            print "Inside User"
             if self.bcrypt.check_password_hash(user[0]['pw_hash'],password):
                 return {'status': True, 'user': user[0]}
             else:
+                print "Inside else"
                 errors.append('The password you entered is incorrect')
                 return {'status': False, 'errors': errors}
         else:
+            print "Email doesn't exist"
             errors.append('The email does not exist in the database')
             return {'status': False, 'errors': errors}
     """
